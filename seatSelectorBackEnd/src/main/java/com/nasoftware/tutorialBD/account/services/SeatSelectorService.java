@@ -26,6 +26,11 @@ public class SeatSelectorService {
     }
 
     public void setSeatById(int id, int seat) throws SeatAlreadyTokenException {
+        if(seat == -1) {
+            seatsMapper.updateSeatById(id, seat);
+            tableDirty = true;
+            return;
+        }
         SeatUnit seatUnit = seatsMapper.queryBySeatId(seat);
         if(seatUnit != null) {
             throw new SeatAlreadyTokenException();
