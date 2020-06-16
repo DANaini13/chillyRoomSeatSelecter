@@ -57,9 +57,9 @@ public class SeatSelectControl : MonoBehaviour
             }
 
         }
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    Camera.main.GetComponent<FreeView>().enabled = true;
-        //}
+        if (Input.GetMouseButtonDown(1))
+        {
+            Camera.main.GetComponent<FreeView>().enabled = true;
+        }
     }
 }

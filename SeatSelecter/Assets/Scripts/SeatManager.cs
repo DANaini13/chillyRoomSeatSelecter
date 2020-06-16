@@ -7,7 +7,11 @@ public class SeatManager : BaseSingleton<SeatManager>
     public Transform seatParent;
     public List<SeatInfo> seatInfos;
     public GameObject playerObj;
-    // Start is called before the first frame update
+
+    public Transform seatModelParent;
+
+
+    public GameObject seatTargetObj;
 
     public string curName ;
 
@@ -17,6 +21,14 @@ public class SeatManager : BaseSingleton<SeatManager>
     }
     void Start()
     {
+        for (int i = 0; i < seatModelParent.childCount; i++)
+        {
+            GameObject seatGo = Instantiate(seatTargetObj, seatModelParent);
+            Vector3 pos = seatModelParent.GetChild(i).position;
+            seatGo.transform.position = new Vector3(pos.x,seatGo.transform.position.y,pos.z);
+           
+        }
+
         for (int i = 0; i < seatParent.childCount; i++)
         {
             SeatInfo seatInfo = seatParent.GetChild(i).GetComponent<SeatInfo>();

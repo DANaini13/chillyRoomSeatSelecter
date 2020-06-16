@@ -22,11 +22,14 @@ public class FreeView : MonoBehaviour
     private float mX = 0.0F;
     private float mY = 0.0F;
 
+    //默认位置
+    private Vector3 mPos;
+
     //鼠标缩放距离最值
-    private float MaxDistance = 30;
-    private float MinDistance = 1.5F;
+    private float MaxDistance = 100;
+    private float MinDistance = 20;
     //鼠标缩放速率
-    private float ZoomSpeed = 5F;
+    private float ZoomSpeed = 30F;
 
     //是否启用差值
     public bool isNeedDamping = true;
@@ -60,6 +63,7 @@ public class FreeView : MonoBehaviour
         mX = transform.eulerAngles.x;
         mY = transform.eulerAngles.y;
         //初始化位置
+        mPos = transform.position;
     }
 
     void LateUpdate()
