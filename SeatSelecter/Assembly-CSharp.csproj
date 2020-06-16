@@ -75,11 +75,13 @@
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenTk2d.cs" />
     <Compile Include="Assets\Scripts\BaseSingleton.cs" />
     <Compile Include="Assets\Scripts\FreeView.cs" />
+    <Compile Include="Assets\Scripts\JsonData.cs" />
     <Compile Include="Assets\Scripts\Loom.cs" />
     <Compile Include="Assets\Scripts\SeatEventControl.cs" />
     <Compile Include="Assets\Scripts\SeatInfo.cs" />
     <Compile Include="Assets\Scripts\SeatManager.cs" />
     <Compile Include="Assets\Scripts\SeatSelectControl.cs" />
+    <Compile Include="Assets\Scripts\WebServices\WebServices.cs" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_CosTime.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Previews\Preview_SimpleDivideOpNode.shader" />
     <None Include="Assets\AmplifyShaderEditor\Plugins\EditorResources\Templates\Legacy\UIDefault.shader" />
@@ -482,6 +484,9 @@
     </Reference>
     <Reference Include="DOTweenPro">
       <HintPath>E:/ChillyRoom/SeatSelecter/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>E:/ChillyRoom/SeatSelecter/Assets/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.0f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

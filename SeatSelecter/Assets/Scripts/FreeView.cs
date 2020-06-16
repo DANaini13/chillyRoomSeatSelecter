@@ -60,8 +60,8 @@ public class FreeView : MonoBehaviour
     {
         //初始化旋转角度
      
-        mX = transform.eulerAngles.x;
-        mY = transform.eulerAngles.y;
+        //mX = transform.eulerAngles.x;
+        //mY = transform.eulerAngles.y;
         //初始化位置
         mPos = transform.position;
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SeatInfo : MonoBehaviour
 {
-    public bool isNull = false;
+    public int seatId = -1;
     public TextMesh text;
     public GameObject playerObj;
 }

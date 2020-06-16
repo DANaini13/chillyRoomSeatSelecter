@@ -725,6 +725,9 @@
     <Reference Include="DOTweenProEditor">
       <HintPath>E:/ChillyRoom/SeatSelecter/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
+    <Reference Include="LitJson">
+      <HintPath>E:/ChillyRoom/SeatSelecter/Assets/Plugins/LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>E:/ChillyRoom/SeatSelecter/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
