@@ -4,6 +4,7 @@ using UnityEngine;
 public delegate void updateUserList(string userList);
 public delegate void selectSeatCallback(string result);
 public delegate void setNameCallback(string result);
+public delegate void grabTimeCallback(long timeStamp);
 
 delegate void postCallback(string result);
 public class WebServices : MonoBehaviour
@@ -42,7 +43,17 @@ public class WebServices : MonoBehaviour
         }));
     }
 
-    private const string url = "http://106.55.244.225:8080/seats/";
+    [System.Obsolete]
+    public void grabTimeStamp(grabTimeCallback callback)
+    {
+        WWWForm form = new WWWForm();
+        StartCoroutine(SendPost(url + "timestamp", form, (string result) => {
+            long now = long.Parse(result);
+            callback(now);
+        }));
+    }
+
+    private const string url = "http://192.168.101.18:8080/seats/";
 
     [System.Obsolete]
     void Start() {
