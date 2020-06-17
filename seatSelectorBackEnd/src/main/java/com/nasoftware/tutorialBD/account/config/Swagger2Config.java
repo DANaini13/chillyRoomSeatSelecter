@@ -39,7 +39,7 @@ public class Swagger2Config {
                 //文档描述
                 .description("接口说明")
                 //服务条款URL
-                .termsOfServiceUrl("http://127.0.0.1:8080/")
+                .termsOfServiceUrl("http://192.168.0.75:8080/")
                 //联系信息
                 .contact("zeyong shan")
                 //版本号

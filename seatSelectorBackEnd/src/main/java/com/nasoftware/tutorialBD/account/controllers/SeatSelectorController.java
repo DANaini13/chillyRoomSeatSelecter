@@ -4,6 +4,7 @@ import com.nasoftware.tutorialBD.account.errors.ErrorInfo;
 import com.nasoftware.tutorialBD.account.errors.LoginResult;
 import com.nasoftware.tutorialBD.account.errors.SetUserNameResult;
 import com.nasoftware.tutorialBD.account.exceptions.AccountNotFoundException;
+import com.nasoftware.tutorialBD.account.exceptions.OperationTimeNotValidException;
 import com.nasoftware.tutorialBD.account.exceptions.PasswordNotMatchException;
 import com.nasoftware.tutorialBD.account.exceptions.SeatAlreadyTokenException;
 import com.nasoftware.tutorialBD.account.services.SeatSelectorService;
@@ -46,6 +47,8 @@ public class SeatSelectorController {
             return new ErrorInfo(ErrorInfo.success, ErrorInfo.success_msg);
         } catch (SeatAlreadyTokenException e) {
             return new ErrorInfo(ErrorInfo.seat_already_token, e.getLocalizedErrorMessage());
+        } catch (OperationTimeNotValidException e) {
+            return new ErrorInfo(ErrorInfo.operation_not_in_valid_period, e.getLocalizedErrorMessage());
         }
     }
 

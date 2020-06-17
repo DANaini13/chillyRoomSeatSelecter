@@ -5,6 +5,8 @@ public class UserAccount {
     private String password_hash;
     private long user_id;
 
+
+
     public String getAccount() {
         return account;
     }
@@ -28,4 +30,5 @@ public class UserAccount {
     public void setUser_id(long user_id) {
         this.user_id = user_id;
     }
+
 }

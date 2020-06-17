@@ -8,6 +8,7 @@ public class ErrorInfo {
     static public final long account_not_found = 3;
     static public final long account_already_exist = 4;
     static public final long seat_already_token = 5;
+    static public final long operation_not_in_valid_period = 6;
 
     /*=================== error msg below ================== */
     static public final String success_msg = "success";
