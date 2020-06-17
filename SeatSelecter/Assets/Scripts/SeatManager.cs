@@ -68,7 +68,7 @@ public class SeatManager : BaseSingleton<SeatManager>
         {
             int seatIndex = (int)playerInfo[1];
             string nameStr = (string)playerInfo[2];
-            Debug.Log(seatInfos.Count);
+
             while (seatIndex+1 <= seatInfos.Count)
             {
                 if (seatIndex != -1)
