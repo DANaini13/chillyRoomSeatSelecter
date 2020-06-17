@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Main-Class: com.nasoftware.tutorialBD.account.AccountApplication
+Class-Path: springfox-swagger-common-2.6.1.jar spring-expression-5.2.4.R
+ ELEASE.jar jackson-datatype-jdk8-2.10.2.jar springfox-spring-web-2.6.1.
+ jar jackson-dataformat-cbor-2.10.2.jar spring-web-5.2.4.RELEASE.jar spr
+ ing-boot-starter-logging-2.2.5.RELEASE.jar spring-tx-5.2.4.RELEASE.jar 
+ jakarta.annotation-api-1.3.5.jar tomcat-embed-core-9.0.31.jar auto-serv
+ ice-1.0-rc4.jar snakeyaml-1.25.jar HikariCP-3.4.2.jar json-20170516.jar
+  spring-boot-starter-2.2.5.RELEASE.jar jackson-datatype-jsr310-2.10.2.j
+ ar jboss-logging-3.4.1.Final.jar spring-boot-starter-tomcat-2.2.5.RELEA
+ SE.jar log4j-to-slf4j-2.12.1.jar google-api-services-cloudkms-v1-rev9-1
+ .22.0.jar spring-boot-autoconfigure-2.2.5.RELEASE.jar jul-to-slf4j-1.7.
+ 30.jar jackson-core-2.10.2.jar spring-aop-5.2.4.RELEASE.jar jsr305-1.3.
+ 9.jar spring-core-5.2.4.RELEASE.jar spring-boot-2.2.5.RELEASE.jar tink-
+ 1.1.0.jar springfox-core-2.6.1.jar mybatis-3.4.6.jar spring-jcl-5.2.4.R
+ ELEASE.jar guava-18.0.jar jackson-module-parameter-names-2.10.2.jar spr
+ ing-boot-starter-web-2.2.1.RELEASE.jar aws-java-sdk-kms-1.11.166.jar sp
+ ring-boot-starter-json-2.2.5.RELEASE.jar aws-java-sdk-core-1.11.166.jar
+  spring-webmvc-5.2.4.RELEASE.jar slf4j-api-1.7.30.jar commons-codec-1.1
+ 3.jar google-http-client-jackson2-1.22.0.jar spring-jdbc-5.2.4.RELEASE.
+ jar spring-boot-starter-jdbc-2.2.5.RELEASE.jar google-http-client-1.22.
+ 0.jar classmate-1.5.1.jar protobuf-java-3.3.0.jar jakarta.validation-ap
+ i-2.0.2.jar swagger-annotations-1.5.10.jar spring-context-5.2.4.RELEASE
+ .jar springfox-spi-2.6.1.jar joda-time-2.10.5.jar spring-beans-5.2.4.RE
+ LEASE.jar mybatis-spring-1.3.2.jar spring-boot-starter-validation-2.2.5
+ .RELEASE.jar auto-common-0.8.jar swagger-models-1.5.10.jar tomcat-embed
+ -websocket-9.0.31.jar httpclient-4.5.11.jar logback-classic-1.2.3.jar s
+ pringfox-swagger2-2.6.1.jar jmespath-java-1.11.166.jar jackson-databind
+ -2.10.2.jar mysql-connector-java-5.1.47.jar hibernate-validator-6.0.18.
+ Final.jar mybatis-spring-boot-autoconfigure-1.3.2.jar springfox-schema-
+ 2.6.1.jar mapstruct-1.0.0.Final.jar spring-plugin-metadata-1.2.0.RELEAS
+ E.jar tomcat-embed-el-9.0.31.jar spring-plugin-core-1.2.0.RELEASE.jar l
+ ogback-core-1.2.3.jar google-api-client-1.22.0.jar jackson-annotations-
+ 2.10.2.jar mybatis-spring-boot-starter-1.3.2.jar ion-java-1.0.2.jar log
+ 4j-api-2.12.1.jar httpcore-4.4.13.jar google-oauth-client-1.22.0.jar sp
+ ringfox-swagger-ui-2.6.1.jar
+
