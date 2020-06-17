@@ -53,7 +53,7 @@ public class WebServices : MonoBehaviour
         }));
     }
 
-    private const string url = "http://192.168.101.18:8080/seats/";
+    private const string url = "http://106.55.244.225:8080/seats/";
 
     [System.Obsolete]
     void Start() {

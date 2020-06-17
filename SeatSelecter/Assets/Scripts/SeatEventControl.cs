@@ -22,14 +22,24 @@ public class SeatEventControl : MonoBehaviour
             Debug.Log(str);
             JsonData jsonData = JsonMapper.ToObject(str);
             JsonData errorInfo = jsonData["errorInfo"];
+            JsonData seatUnitInfo = jsonData["seatUnit"];
             errorNum = (int)errorInfo["errorCode"];
 
             if (errorNum == 0)
             {
-                SeatManager.Instance.curId = (int)jsonData["userId"];
+                SeatManager.Instance.curId = (int)seatUnitInfo["id"];
                 loginObj.SetActive(false);
                 mainMenuObj.SetActive(true);
                 sceneObj.SetActive(true);
+                //设置时间
+                SeatManager.Instance.webServices.grabTimeStamp((long f) => {
+                    Debug.Log("时间:" + f);
+                    SeatManager.Instance.curTime = f;
+
+                });
+                SeatManager.Instance.CheckStartTime((int)seatUnitInfo["start_time"], (int)seatUnitInfo["end_time"]);
+                SeatManager.Instance.startTime = (int)seatUnitInfo["start_time"];
+                SeatManager.Instance.endTime = (int)seatUnitInfo["end_time"];
             }
             else
             {
@@ -42,6 +52,8 @@ public class SeatEventControl : MonoBehaviour
         //检查姓名是否通过
 
     }
+
+
 
     public void ExitGame()
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LitJson;
+using UnityEngine.UI;
 
 public class SeatManager : BaseSingleton<SeatManager>
 {
@@ -16,9 +17,21 @@ public class SeatManager : BaseSingleton<SeatManager>
 
     public WebServices webServices;
 
+    public Text timeText;
+
     public int curId = -1 ;
 
     public List<int> seatIndexList;
+
+    public bool isStartSeatSelect = false;
+
+    public long curTime = 0;
+
+    public float gameTime = 0;
+
+    public long startTime = 0;
+
+    public long endTime = 0;
 
     private void Awake()
     {
@@ -49,14 +62,28 @@ public class SeatManager : BaseSingleton<SeatManager>
         }
         webServices.setSeatChangeListener((string str) =>
         {
-       
             JsonData jsonData= JsonMapper.ToObject(str);
 
             RefreshPlayer(jsonData);
         });
     }
 
+    private void FixedUpdate()
+    {
 
+
+        if (curTime != 0&&startTime>0)
+        {
+            gameTime += Time.deltaTime;
+            if (gameTime >= 1)
+            {
+                curTime += 1;
+                gameTime = 0;
+                CheckStartTime(startTime, endTime);
+            }
+           
+        }
+    }
     public void RefreshPlayer(JsonData jsonData)
     {
         while (seatInfos.Count ==0)
@@ -69,6 +96,11 @@ public class SeatManager : BaseSingleton<SeatManager>
             int seatIndex = (int)playerInfo[1];
             string nameStr = (string)playerInfo[2];
 
+            if (curId != -1 && (int)playerInfo[1] == curId)
+            {
+                CheckStartTime((int)playerInfo[3], (int)playerInfo[4]);
+            }
+   
             while (seatIndex+1 <= seatInfos.Count)
             {
                 if (seatIndex != -1)
@@ -93,9 +125,45 @@ public class SeatManager : BaseSingleton<SeatManager>
             if (!seatIndexList.Contains(i))
             {
                 seatInfos[i].text.text = "";
-               Destroy(seatInfos[i].playerObj);
+                Destroy(seatInfos[i].playerObj);
             }
         }
     }
 
+    public void CheckStartTime(long startTime,long endTime)
+    {
+        switch (startTime)
+        {
+            case 0:
+                timeText.text = "可以选择座位";
+                isStartSeatSelect = true;
+                break;
+            case -1:
+                timeText.text = "不可选择座位";
+                isStartSeatSelect = false;
+                break;
+            default:
+                if (curTime < startTime)
+                {
+                    timeText.text = "不可选择座位";
+                    isStartSeatSelect = false;
+                }
+                else
+                {
+                    long timeRemain = endTime - curTime;
+                    if (timeRemain >= 0)
+                    {
+                        timeText.text = (timeRemain / 3600).ToString() + ":" + ((timeRemain % 3600) / 60).ToString() + ":" + timeRemain%60;
+                        isStartSeatSelect = true;
+                    }
+                    else
+                    {
+                        timeText.text = "不可选择座位";
+                        isStartSeatSelect = false;
+                    }
+                }
+            
+                break;
+        }
+    }
 }
