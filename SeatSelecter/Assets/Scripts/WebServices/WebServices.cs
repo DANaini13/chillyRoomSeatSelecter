@@ -28,7 +28,7 @@ public class WebServices : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("userId", userId);
         form.AddField("seatId", seat);
-        StartCoroutine(SendPost(url + "checkName/", form, (string result) => {
+        StartCoroutine(SendPost(url + "setSeat/", form, (string result) => {
             callback(result);
         }));
     }
