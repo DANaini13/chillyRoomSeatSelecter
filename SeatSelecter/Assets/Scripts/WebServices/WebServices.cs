@@ -33,13 +33,20 @@ public class WebServices : MonoBehaviour
         }));
     }
 
+    [System.Obsolete]
+    public void grabUserList(updateUserList callback)
+    {
+        WWWForm form = new WWWForm();
+        StartCoroutine(SendPost(url + "queryUsers", form, (string result) => {
+            callback(result);
+        }));
+    }
+
     private const string url = "http://192.168.101.18:8080/seats/";
 
     [System.Obsolete]
     void Start() {
-        StartCoroutine(refreshUserListFromWeb(0.1f));
-
- 
+        StartCoroutine(refreshUserListFromWeb(0.5f));
     }
     private updateUserList userListUpdateCallback = null;
 
