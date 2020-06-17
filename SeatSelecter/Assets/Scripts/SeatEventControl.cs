@@ -7,7 +7,8 @@ using LitJson;
 
 public class SeatEventControl : MonoBehaviour
 {
-    public GameObject canvasObj;
+    public GameObject loginObj;
+    public GameObject mainMenuObj;
     public GameObject sceneObj;
 
     public Text errorText;
@@ -26,7 +27,8 @@ public class SeatEventControl : MonoBehaviour
             if (errorNum == 0)
             {
                 SeatManager.Instance.curId = (int)jsonData["userId"];
-                canvasObj.SetActive(false);
+                loginObj.SetActive(false);
+                mainMenuObj.SetActive(true);
                 sceneObj.SetActive(true);
             }
             else
@@ -39,5 +41,10 @@ public class SeatEventControl : MonoBehaviour
         });
         //检查姓名是否通过
 
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
