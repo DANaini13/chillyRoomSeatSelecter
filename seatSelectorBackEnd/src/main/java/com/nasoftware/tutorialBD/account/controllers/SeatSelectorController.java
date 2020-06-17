@@ -57,4 +57,12 @@ public class SeatSelectorController {
     List<SeatUnit> queryAllUsers() {
         return seatSelectorService.getAllUserState();
     }
+
+    @ApiOperation(value = "获取服务器时间", notes = "无参数")
+    @PostMapping("/timestamp")
+    long getTimeStamp()
+    {
+        return System.currentTimeMillis()/1000L;
+    }
+
 }
