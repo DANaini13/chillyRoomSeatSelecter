@@ -66,24 +66,10 @@ public class SeatManager : BaseSingleton<SeatManager>
 
             RefreshPlayer(jsonData);
         });
+        StartCoroutine("refreshGameTime");
     }
 
-    private void FixedUpdate()
-    {
-
-
-        if (curTime != 0&&startTime>0)
-        {
-            gameTime += Time.deltaTime;
-            if (gameTime >= 1)
-            {
-                curTime += 1;
-                gameTime = 0;
-                CheckStartTime(startTime, endTime);
-            }
-           
-        }
-    }
+ 
     public void RefreshPlayer(JsonData jsonData)
     {
         while (seatInfos.Count ==0)
@@ -136,17 +122,17 @@ public class SeatManager : BaseSingleton<SeatManager>
         {
             case 0:
                 timeText.text = "可以选择座位";
-                isStartSeatSelect = true;
+               // isStartSeatSelect = true;
                 break;
             case -1:
                 timeText.text = "不可选择座位";
-                isStartSeatSelect = false;
+             //   isStartSeatSelect = false;
                 break;
             default:
                 if (curTime < startTime)
                 {
                     timeText.text = "不可选择座位";
-                    isStartSeatSelect = false;
+                //    isStartSeatSelect = false;
                 }
                 else
                 {
@@ -154,16 +140,31 @@ public class SeatManager : BaseSingleton<SeatManager>
                     if (timeRemain >= 0)
                     {
                         timeText.text = (timeRemain / 3600).ToString() + ":" + ((timeRemain % 3600) / 60).ToString() + ":" + timeRemain%60;
-                        isStartSeatSelect = true;
+                    //    isStartSeatSelect = true;
                     }
                     else
                     {
                         timeText.text = "不可选择座位";
-                        isStartSeatSelect = false;
+                    //    isStartSeatSelect = false;
                     }
                 }
             
                 break;
+        }
+    }
+
+    IEnumerator refreshGameTime()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(1);
+            if (curTime != 0 && startTime > 0)
+            {
+                curTime += 1;
+                CheckStartTime(startTime, endTime);
+
+            }
+
         }
     }
 }

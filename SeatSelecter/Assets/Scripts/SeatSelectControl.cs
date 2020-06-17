@@ -16,7 +16,7 @@ public class SeatSelectControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)&&SeatManager.Instance.isStartSeatSelect)
+        if (Input.GetMouseButtonDown(0))
         {
 
             RaycastHit hit;
