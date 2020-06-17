@@ -39,6 +39,7 @@ public class SeatManager : BaseSingleton<SeatManager>
         {
             SeatInfo seatInfo = seatParent.GetChild(i).GetComponent<SeatInfo>();
             seatInfo.seatId = i;
+            seatInfo.eulerAngleY = seatModelParent.GetChild(i).localEulerAngles.y;
             if (seatInfo != null)
             {
                 seatInfos.Add(seatInfo);
@@ -67,7 +68,7 @@ public class SeatManager : BaseSingleton<SeatManager>
         {
             int seatIndex = (int)playerInfo[1];
             string nameStr = (string)playerInfo[2];
-            Debug.Log(seatInfos.Count);
+
             while (seatIndex+1 <= seatInfos.Count)
             {
                 if (seatIndex != -1)
@@ -75,6 +76,7 @@ public class SeatManager : BaseSingleton<SeatManager>
                     if (seatInfos[seatIndex].playerObj == null)
                     {
                         seatInfos[seatIndex].playerObj = Instantiate(playerObj, seatInfos[seatIndex].transform);
+                        seatInfos[seatIndex].playerObj.transform.localEulerAngles = new Vector3(0, seatInfos[seatIndex].eulerAngleY, 0);
                     }
 
                     seatInfos[seatIndex].text.text = nameStr;

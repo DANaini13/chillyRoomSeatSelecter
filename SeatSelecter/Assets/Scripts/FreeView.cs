@@ -90,7 +90,10 @@ public class FreeView : MonoBehaviour
         }
 
         //鼠标中键平移
-
+        if (Input.GetMouseButton(2))
+        {
+             Target.Translate(Vector3.right * Input.GetAxis("Mouse X"));
+        }
 
         //鼠标滚轮缩放
         Distance -= Input.GetAxis("Mouse ScrollWheel") * ZoomSpeed;

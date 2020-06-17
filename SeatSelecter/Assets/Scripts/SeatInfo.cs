@@ -8,4 +8,5 @@ public class SeatInfo : MonoBehaviour
     public int seatId = -1;
     public TextMesh text;
     public GameObject playerObj;
+    public float eulerAngleY;
 }

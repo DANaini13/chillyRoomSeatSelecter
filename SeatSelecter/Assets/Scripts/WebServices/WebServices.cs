@@ -46,7 +46,7 @@ public class WebServices : MonoBehaviour
 
     [System.Obsolete]
     void Start() {
-        StartCoroutine(refreshUserListFromWeb(0.5f));
+        StartCoroutine(refreshUserListFromWeb(0.1f));
     }
     private updateUserList userListUpdateCallback = null;
 
